@@ -5,10 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -20,14 +26,15 @@ import ac.id.pnj.utsaldyberita.fragment.profile.ProfileFragment;
 public class HomeActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigation;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
+        sharedPreferences = getSharedPreferences("UtsAldyBerita", MODE_PRIVATE);
         bottomNavigation = findViewById(R.id.bottom_navigation);
-
+        setTitle(sharedPreferences.getString("nama", ""));
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
 
         bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -53,23 +60,39 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
-//        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-//        fragmentTransaction.add(R.id.frame_container, homeFragment);
-//        fragmentTransaction.commit();
     }
 
-//    @Override
-//    public void onClick(View v) {
-//        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-//        switch (v.getId()) {
-//            case R.id.actionHome:
-//                fragmentTransaction.replace(R.id.frame_container, homeFragment);
-//                fragmentTransaction.commit();
-//                break;
-//            case R.id.actionProfile:
-//                fragmentTransaction.replace(R.id.frame_container, profileFragment);
-//                fragmentTransaction.commit();
-//                break;
-//        }
-//    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.menu, menu);
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch(item.getItemId()) {
+            case R.id.actionMenu1:
+                Toast.makeText(this, "Menu Tambah Data dipilih", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.actionMenu2:
+                Toast.makeText(this, "Menu Data Penduduk dipilih", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.actionMenu3:
+                SharedPreferences sharedPreferences = getSharedPreferences("UtsAldyBerita", MODE_PRIVATE);
+                SharedPreferences.Editor edit= sharedPreferences.edit();
+                edit.clear();
+                edit.commit();
+
+                Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+
+                Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 }

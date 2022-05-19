@@ -1,17 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_blue_dark"
+    android:orientation="vertical"
     tools:context=".fragment.home.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"
-        android:text="Home Fragment" />
+        android:layout_marginBottom="20dp"
+        android:text="Tentang Aplikasi" />
 
-</RelativeLayout>
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus nunc ipsum. Mauris viverra odio metus, non viverra diam congue eget. Donec scelerisque pellentesque ex, eu maximus nulla elementum id. Ut justo purus, iaculis in ornare in, scelerisque quis turpis. Nunc ex ipsum, ultrices sit amet ex vel, scelerisque pulvinar erat. Pellentesque eget blandit dui, eu tempor neque. Pellentesque efficitur gravida mollis. Duis odio purus, venenatis sit amet nulla vitae, ultricies vestibulum diam. Duis vel quam sed ante cursus tristique." />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Integer nec ligula tincidunt, mollis lacus semper, sollicitudin mauris. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus malesuada condimentum magna vitae condimentum. Nunc tincidunt, nunc at faucibus dictum, odio augue volutpat eros, a varius mauris tortor ut ligula. Nam augue risus, vulputate sed elit sed, volutpat ornare mi. Duis euismod enim enim, eu mattis mauris lacinia pulvinar. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc placerat, justo vitae congue condimentum, magna dui auctor lorem, in tincidunt sem felis sit amet diam. Vestibulum blandit erat sit amet finibus sollicitudin. Nunc volutpat porttitor mi non faucibus. Nulla massa mi, iaculis ornare massa quis, mattis volutpat orci. Aliquam aliquet mi magna, vel dapibus ante tempus et." />
+</LinearLayout>

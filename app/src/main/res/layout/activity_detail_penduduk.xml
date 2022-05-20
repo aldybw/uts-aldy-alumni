@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".TambahPendudukActivity">
+    tools:context=".DetailPendudukActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -133,13 +133,29 @@
                 android:inputType="text"
                 android:textSize="14sp" />
 
-            <Button
-                android:id="@+id/actionSimpan"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:text="Simpan"
-                android:textSize="16sp" />
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/actionUbah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Ubah"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/actionHapus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Hapus"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 

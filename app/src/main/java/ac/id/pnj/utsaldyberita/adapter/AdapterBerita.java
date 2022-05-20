@@ -30,12 +30,12 @@ public class AdapterBerita extends ArrayAdapter<BeritaModel> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        Holder holder = null;
+        Holder holder;
         BeritaModel model = getItem(position);
 
         if(convertView==null) {
-            holder = new Holder();
             convertView = LayoutInflater.from(context).inflate(resource,parent,false);
+            holder = new Holder();
             holder.imageBerita = convertView.findViewById(R.id.imgBerita);
             holder.txtJudul = convertView.findViewById(R.id.txtJudul);
             holder.txtIsiBerita = convertView.findViewById(R.id.txtIsiBerita);

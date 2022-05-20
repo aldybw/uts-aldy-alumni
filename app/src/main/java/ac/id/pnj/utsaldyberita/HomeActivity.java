@@ -34,7 +34,7 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         sharedPreferences = getSharedPreferences("UtsAldyBerita", MODE_PRIVATE);
         bottomNavigation = findViewById(R.id.bottom_navigation);
-        setTitle(sharedPreferences.getString("nama", ""));
+//        setTitle(sharedPreferences.getString("nama", ""));
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
 
         bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -75,10 +75,14 @@ public class HomeActivity extends AppCompatActivity {
 
         switch(item.getItemId()) {
             case R.id.actionMenu1:
-                Toast.makeText(this, "Menu Tambah Data dipilih", Toast.LENGTH_SHORT).show();
+                Intent intent1 = new Intent(HomeActivity.this, TambahPendudukActivity.class);
+                startActivity(intent1);
+//                Toast.makeText(this, "Menu Tambah Data dipilih", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.actionMenu2:
-                Toast.makeText(this, "Menu Data Penduduk dipilih", Toast.LENGTH_SHORT).show();
+                Intent intent2 = new Intent(HomeActivity.this, DataPendudukActivity.class);
+                startActivity(intent2);
+//                Toast.makeText(this, "Menu Data Penduduk dipilih", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.actionMenu3:
                 SharedPreferences sharedPreferences = getSharedPreferences("UtsAldyBerita", MODE_PRIVATE);
@@ -86,8 +90,8 @@ public class HomeActivity extends AppCompatActivity {
                 edit.clear();
                 edit.commit();
 
-                Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
-                startActivity(intent);
+                Intent intent3 = new Intent(HomeActivity.this, LoginActivity.class);
+                startActivity(intent3);
                 finish();
 
                 Toast.makeText(this, "Logout", Toast.LENGTH_SHORT).show();

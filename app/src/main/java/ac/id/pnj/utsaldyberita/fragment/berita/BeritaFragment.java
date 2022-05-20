@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
 import ac.id.pnj.utsaldyberita.DetailBeritaActivity;
 import ac.id.pnj.utsaldyberita.R;
 import ac.id.pnj.utsaldyberita.adapter.AdapterBerita;
@@ -48,6 +50,7 @@ public class BeritaFragment extends Fragment {
 
         adapterBerita = new AdapterBerita(getActivity(), R.layout.layout_item_list_berita);
         listView.setAdapter(adapterBerita);
+//        generateData();
         loadDataList();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -67,8 +70,8 @@ public class BeritaFragment extends Fragment {
 
     void loadDataList() {
         String[] image = new String[]{"https://s.kaskus.id/images/2022/01/22/11076539_202201220606470145.jpg",
-                "https://akcdn.detik.net.id/community/media/visual/2020/10/27/kapolsek-mampang-prapatan-kompol-sujarwo-didampingi-kanit-reskrim-iptu-sigit-dan-kasubag-humas-akprita-1_169.jpeg?w=700&q=90",
-                "https://akcdn.detik.net.id/community/media/visual/2020/10/27/temuan-indikasi-kehidupan-di-venus-sebuah-kesalahan-pengukuran.jpeg?w=700&q=90"};
+                "https://awsimages.detik.net.id/content/2013/08/14/775/flipflop.jpg",
+                "https://www.harapanrakyat.com/wp-content/uploads/2021/03/11.-Sandal-Jepit-Ukir-Hadir-dengan-Berbagai-Rekomendasi-Menarik.jpg"};
 
         String[] judul = new String[]{"Vaksin COVID-19 Ditemukan, Saatnya Berburu Investasi Properti",
                 "Alarm Berbunyi, 2 Pria Ini Gagal Curi Motor di Mampang Jaksel",
@@ -87,4 +90,31 @@ public class BeritaFragment extends Fragment {
         }
         adapterBerita.notifyDataSetChanged();
     }
+
+//    void generateData(){
+//
+//        ArrayList<BeritaModel> datas = new ArrayList<>();
+//
+//        BeritaModel b1 = new BeritaModel();
+//        b1.setImage("https://s.kaskus.id/images/2022/01/22/11076539_202201220606470145.jpg");
+//        b1.setJudulBerita("Vaksin COVID-19 Ditemukan, Saatnya Berburu Investasi Properti");
+//        b1.setIsiBerita("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
+//
+//        BeritaModel b2 = new BeritaModel();
+//        b2.setImage("https://s.kaskus.id/images/2022/01/22/11076539_202201220606470145.jpg");
+//        b2.setJudulBerita("Vaksin COVID-19 Ditemukan, Saatnya Berburu Investasi Properti");
+//        b2.setIsiBerita("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
+//
+//        BeritaModel b3 = new BeritaModel();
+//        b3.setImage("https://s.kaskus.id/images/2022/01/22/11076539_202201220606470145.jpg");
+//        b3.setJudulBerita("Vaksin COVID-19 Ditemukan, Saatnya Berburu Investasi Properti");
+//        b3.setIsiBerita("Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.");
+//
+//        datas.add(b1);
+//        datas.add(b2);
+//        datas.add(b3);
+//
+//        adapterBerita.addAll(datas);
+//        adapterBerita.notifyDataSetChanged();
+//    }
 }

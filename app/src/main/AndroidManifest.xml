@@ -13,13 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.UTSAldyBerita">
         <activity
-            android:name=".DetailPendudukActivity"
+            android:name=".DetailAlumniActivity"
             android:exported="false" />
         <activity
-            android:name=".DataPendudukActivity"
+            android:name=".DataAlumniActivity"
             android:exported="false" />
         <activity
-            android:name=".TambahPendudukActivity"
+            android:name=".TambahAlumniActivity"
             android:exported="false" />
         <activity
             android:name=".DetailBeritaActivity"
@@ -39,9 +39,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity"
-            android:exported="false" />
     </application>
 
 </manifest>

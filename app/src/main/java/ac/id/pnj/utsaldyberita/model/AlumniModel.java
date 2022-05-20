@@ -1,30 +1,33 @@
 package ac.id.pnj.utsaldyberita.model;
 
-public class PendudukModel {
-    String nik;
-    String nama;
+public class AlumniModel {
+    String nim;
+    String namaAlumni;
     String tempatLahir;
     String tanggalLahir;
     String alamat;
     String agama;
     String hp;
-    String kepalaKeluarga;
+    String tahunMasuk;
+    String tahunLulus;
+    String pekerjaan;
+    String jabatan;
     int id;
 
-    public String getNik() {
-        return nik;
+    public String getNim() {
+        return nim;
     }
 
-    public void setNik(String nik) {
-        this.nik = nik;
+    public void setNim(String nim) {
+        this.nim = nim;
     }
 
-    public String getNama() {
-        return nama;
+    public String getNamaAlumni() {
+        return namaAlumni;
     }
 
-    public void setNama(String nama) {
-        this.nama = nama;
+    public void setNamaAlumni(String namaAlumni) {
+        this.namaAlumni = namaAlumni;
     }
 
     public String getTempatLahir() {
@@ -67,12 +70,36 @@ public class PendudukModel {
         this.hp = hp;
     }
 
-    public String getKepalaKeluarga() {
-        return kepalaKeluarga;
+    public String getTahunMasuk() {
+        return tahunMasuk;
     }
 
-    public void setKepalaKeluarga(String kepalaKeluarga) {
-        this.kepalaKeluarga = kepalaKeluarga;
+    public void setTahunMasuk(String tahunMasuk) {
+        this.tahunMasuk = tahunMasuk;
+    }
+
+    public String getTahunLulus() {
+        return tahunLulus;
+    }
+
+    public void setTahunLulus(String tahunLulus) {
+        this.tahunLulus = tahunLulus;
+    }
+
+    public String getPekerjaan() {
+        return pekerjaan;
+    }
+
+    public void setPekerjaan(String pekerjaan) {
+        this.pekerjaan = pekerjaan;
+    }
+
+    public String getJabatan() {
+        return jabatan;
+    }
+
+    public void setJabatan(String jabatan) {
+        this.jabatan = jabatan;
     }
 
     public int getId() {

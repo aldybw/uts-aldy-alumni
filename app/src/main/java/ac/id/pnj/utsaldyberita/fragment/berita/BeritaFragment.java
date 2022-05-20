@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ import ac.id.pnj.utsaldyberita.model.BeritaModel;
  */
 public class BeritaFragment extends Fragment {
 
-    ListView listView;
+    GridView gridView;
     AdapterBerita adapterBerita;
 
     @Override
@@ -46,14 +47,13 @@ public class BeritaFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        listView = view.findViewById(R.id.listView);
+        gridView = view.findViewById(R.id.gridView);
 
         adapterBerita = new AdapterBerita(getActivity(), R.layout.layout_item_list_berita);
-        listView.setAdapter(adapterBerita);
-//        generateData();
+        gridView.setAdapter(adapterBerita);
         loadDataList();
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 BeritaModel model = (BeritaModel) parent.getAdapter().getItem(position);

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".TambahPendudukActivity">
+    tools:context=".DetailAlumniActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -20,11 +20,11 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NIK"
+                android:text="NIM"
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/edtNik"
+                android:id="@+id/edtNim"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -38,7 +38,7 @@
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/edtNama"
+                android:id="@+id/edtNamaAlumni"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
@@ -122,24 +122,85 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Kepala Keluarga"
+                android:text="Tahun Masuk"
                 android:textSize="14sp" />
 
             <EditText
-                android:id="@+id/edtKepalaKeluarga"
+                android:id="@+id/edtTahunMasuk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:inputType="text"
                 android:textSize="14sp" />
 
-            <Button
-                android:id="@+id/actionSimpan"
-                android:layout_width="match_parent"
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Simpan"
-                android:textSize="16sp" />
+                android:text="Tahun Lulus"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edtTahunLulus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:inputType="text"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Pekerjaan"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edtPekerjaan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:inputType="text"
+                android:textSize="14sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="Jabatan"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edtJabatan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:inputType="text"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/actionUbah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Ubah"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/actionHapus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Hapus"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
         </LinearLayout>
     </ScrollView>
 

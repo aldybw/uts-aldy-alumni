@@ -3,17 +3,13 @@ package ac.id.pnj.utsaldyberita;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -34,7 +30,6 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         sharedPreferences = getSharedPreferences("UtsAldyBerita", MODE_PRIVATE);
         bottomNavigation = findViewById(R.id.bottom_navigation);
-//        setTitle(sharedPreferences.getString("nama", ""));
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomeFragment()).commit();
 
         bottomNavigation.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
@@ -75,12 +70,12 @@ public class HomeActivity extends AppCompatActivity {
 
         switch(item.getItemId()) {
             case R.id.actionMenu1:
-                Intent intent1 = new Intent(HomeActivity.this, TambahPendudukActivity.class);
+                Intent intent1 = new Intent(HomeActivity.this, TambahAlumniActivity.class);
                 startActivity(intent1);
 //                Toast.makeText(this, "Menu Tambah Data dipilih", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.actionMenu2:
-                Intent intent2 = new Intent(HomeActivity.this, DataPendudukActivity.class);
+                Intent intent2 = new Intent(HomeActivity.this, DataAlumniActivity.class);
                 startActivity(intent2);
 //                Toast.makeText(this, "Menu Data Penduduk dipilih", Toast.LENGTH_SHORT).show();
                 break;

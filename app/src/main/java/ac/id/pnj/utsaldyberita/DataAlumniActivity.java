@@ -12,39 +12,41 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-import ac.id.pnj.utsaldyberita.adapter.AdapterPenduduk;
+import ac.id.pnj.utsaldyberita.adapter.AdapterAlumni;
 import ac.id.pnj.utsaldyberita.database.DatabaseHelper;
-import ac.id.pnj.utsaldyberita.model.BeritaModel;
-import ac.id.pnj.utsaldyberita.model.PendudukModel;
+import ac.id.pnj.utsaldyberita.model.AlumniModel;
 
-public class DataPendudukActivity extends AppCompatActivity {
+public class DataAlumniActivity extends AppCompatActivity {
 
     ListView listView;
-    AdapterPenduduk adapterPenduduk;
+    AdapterAlumni adapterAlumni;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_data_penduduk);
+        setContentView(R.layout.activity_data_alumni);
         listView = findViewById(R.id.listView);
-        adapterPenduduk = new AdapterPenduduk(this, R.layout.layout_item_list_penduduk);
-        listView.setAdapter(adapterPenduduk);
+        adapterAlumni = new AdapterAlumni(this, R.layout.layout_item_list_alumni);
+        listView.setAdapter(adapterAlumni);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                PendudukModel model = (PendudukModel) adapterView.getAdapter().getItem(i);
+                AlumniModel model = (AlumniModel) adapterView.getAdapter().getItem(i);
 
-                Intent intent = new Intent(DataPendudukActivity.this, DetailPendudukActivity.class);
+                Intent intent = new Intent(DataAlumniActivity.this, DetailAlumniActivity.class);
                 intent.putExtra("id", model.getId());
-                intent.putExtra("nik", model.getNik());
-                intent.putExtra("nama", model.getNama());
+                intent.putExtra("nim", model.getNim());
+                intent.putExtra("namaAlumni", model.getNamaAlumni());
                 intent.putExtra("tempatLahir", model.getTempatLahir());
                 intent.putExtra("tanggalLahir", model.getTanggalLahir());
                 intent.putExtra("alamat", model.getAlamat());
                 intent.putExtra("agama", model.getAgama());
                 intent.putExtra("hp", model.getHp());
-                intent.putExtra("kepalaKeluarga", model.getKepalaKeluarga());
+                intent.putExtra("tahunMasuk", model.getTahunMasuk());
+                intent.putExtra("tahunLulus", model.getTahunLulus());
+                intent.putExtra("pekerjaan", model.getPekerjaan());
+                intent.putExtra("jabatan", model.getJabatan());
 
                 startActivity(intent);
             }
@@ -58,27 +60,30 @@ public class DataPendudukActivity extends AppCompatActivity {
     }
 
     void getData() {
-        adapterPenduduk.clear();
-        ArrayList<PendudukModel> datas = new ArrayList<>();
+        adapterAlumni.clear();
+        ArrayList<AlumniModel> datas = new ArrayList<>();
         SQLiteDatabase database = new DatabaseHelper(this).getReadableDatabase();
-        Cursor cursor = database.rawQuery("SELECT * FROM tb_penduduk", null);
+        Cursor cursor = database.rawQuery("SELECT * FROM tb_alumni", null);
 
         if (cursor.moveToFirst()) {
             do {
-                PendudukModel model = new PendudukModel();
+                AlumniModel model = new AlumniModel();
                 model.setId(cursor.getInt(0));
-                model.setNik(cursor.getString(1));
-                model.setNama(cursor.getString(2));
+                model.setNim(cursor.getString(1));
+                model.setNamaAlumni(cursor.getString(2));
                 model.setTempatLahir(cursor.getString(3));
                 model.setTanggalLahir(cursor.getString(4));
                 model.setAlamat(cursor.getString(5));
                 model.setAgama(cursor.getString(6));
                 model.setHp(cursor.getString(7));
-                model.setKepalaKeluarga(cursor.getString(8));
+                model.setTahunMasuk(cursor.getString(8));
+                model.setTahunLulus(cursor.getString(9));
+                model.setPekerjaan(cursor.getString(10));
+                model.setJabatan(cursor.getString(11));
                 datas.add(model);
             } while(cursor.moveToNext());
         }
-        adapterPenduduk.addAll(datas);
-        adapterPenduduk.notifyDataSetChanged();
+        adapterAlumni.addAll(datas);
+        adapterAlumni.notifyDataSetChanged();
     }
 }
